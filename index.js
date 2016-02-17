@@ -1,9 +1,13 @@
 /* jshint node: true */
 'use strict';
 
+var fs   = require('fs');
+var path = require('path');
+var semver = require('semver');
+
 module.exports = {
   name: 'ember-foundation-sass',
-  ncluded: function(app) {
+  included: function(app) {
     this._super.included(app);
     //this.app.import(app.bowerDirectory);
     var options = app.options['ember-foundation-sass'] || {};;

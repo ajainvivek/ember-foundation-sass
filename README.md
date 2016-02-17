@@ -28,24 +28,39 @@ This addon provides an API to simplify adding the Foundation JavaScript modules 
 //Brocfile.js
 //Includes modernizr, fastclick and the full foundation.js with all modules
 var app = new EmberApp({
-  'ember-cli-foundation-sass': {
+  'ember-foundation-sass': {
     'modernizr': true,
     'fastclick': true,
     'foundationJs': 'all'
+  },
+  'sassOptions': { //include foundation scss
+    'includePaths': [
+      'bower_components/foundation/scss'
+    ]
   }
 });
 
 //Includes the core foundation.js with the tab, topbar, orbit and dropdown module
 var app = new EmberApp({
-  'ember-cli-foundation-sass': {
+  'ember-foundation-sass': {
     'foundationJs': ['tab', 'topbar', 'orbit', 'dropdown']
+  },
+  'sassOptions': { //include foundation scss
+    'includePaths': [
+      'bower_components/foundation/scss'
+    ]
   }
 });
 
 //Includes just the core foundation.js without any modules
 var app = new EmberApp({
-  'ember-cli-foundation-sass': {
+  'ember-foundation-sass': {
     'foundationJs': true
+  },
+  'sassOptions': { //include foundation scss
+    'includePaths': [
+      'bower_components/foundation/scss'
+    ]
   }
 });
 ```

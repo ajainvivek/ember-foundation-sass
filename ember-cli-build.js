@@ -3,7 +3,20 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-addon');
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
-    // Add options here
+    'ember-foundation-sass': {
+      'modernizr': true,
+      'fastclick': true,
+      'foundationJs': 'all'
+    },
+    'babel': {
+      optional: ['es6.spec.symbols'],
+      includePolyfill: true
+    },
+    'sassOptions': {
+      'includePaths': [
+        'bower_components/foundation/scss'
+      ]
+    }
   });
 
   /*

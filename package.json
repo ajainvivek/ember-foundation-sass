@@ -14,7 +14,11 @@
     "start": "ember server",
     "test": "ember try:testall"
   },
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ajainvivek/ember-foundation-sass"
+  },
+  "homepage" : "https://github.com/ajainvivek/ember-foundation-sass",
   "engines": {
     "node": ">= 0.10.0"
   },

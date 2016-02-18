@@ -1,4 +1,4 @@
-# Ember CLI Foundation SASS Addon
+# Ember Foundation SASS Addon
 
 This addon automates the steps to include SASS with [Foundation 5.5.3](https://github.com/zurb/foundation) into your ember-cli app using [ember-cli-sass](https://github.com/aexmachina/ember-cli-sass) as well as simplifying the customization of the settings and which components you want to include.
 
@@ -25,7 +25,7 @@ This setup is made so you don't have to worry about how to customize Foundation,
 This addon provides an API to simplify adding the Foundation JavaScript modules and dependencies:
 
 ```js
-//Brocfile.js
+//ember-cli-build.js
 //Includes modernizr, fastclick and the full foundation.js with all modules
 var app = new EmberApp({
   'ember-foundation-sass': {
@@ -65,7 +65,7 @@ var app = new EmberApp({
 });
 ```
 
-Whenever you use any foundation JS module in your code, make sure that view/component includes the following:
+Whenever you use any foundation JS module in your code, make sure that component includes the following:
 ```js
 import Ember from 'ember';
 

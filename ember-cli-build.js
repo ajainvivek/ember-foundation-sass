@@ -14,7 +14,7 @@ module.exports = function(defaults) {
     },
     'sassOptions': {
       'includePaths': [
-        'bower_components/foundation/scss'
+        'bower_components/foundation-sites/scss'
       ]
     }
   });

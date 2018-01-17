@@ -1,29 +1,33 @@
 /* jshint node: true */
 'use strict';
 
-var fs   = require('fs');
-var path = require('path');
-var semver = require('semver');
+const fs   = require('fs');
+const path = require('path');
+const semver = require('semver');
 
 module.exports = {
-  name: 'ember-foundation-sass',
+  name: 'ember-foundation-sass-2',
+
   included: function(app) {
+  
     this._super.included(app);
     //this.app.import(app.bowerDirectory);
-    var options = app.options['ember-foundation-sass'] || {};;
-    var emberCLIVersion = app.project.emberCLIVersion();
+    let options = app.options['ember-foundation-sass-2'] || {};;
+  
+    let emberCLIVersion = app.project.emberCLIVersion();
+  
     if (semver.lt(emberCLIVersion, '1.0.0')) {
-      throw new Error('ember-foundation-sass requires ember-cli version 1.0.0 or greater.\n');
+      throw new Error('ember-foundation-sass-2 requires ember-cli version 1.0.0 or greater.\n');
     }
 
     if (semver.lt(emberCLIVersion, '1.0.0')) {
       //Using old form to add sassOptions for old ember-clis
       //Make sure the ember-cli-sass options are set/appended in the right way (and not just overwriting)
       if(options['sassOptions'] && options['sassOptions']['includePaths']) {
-        options['sassOptions']['includePaths'].push('bower_components/foundation/scss');
+        options['sassOptions']['includePaths'].push('bower_components/foundation-sites/scss');
       } else {
         options['sassOptions'] = options['sassOptions'] || {};
-        options['sassOptions']['includePaths'] = ['bower_components/foundation/scss'];
+        options['sassOptions']['includePaths'] = ['bower_components/foundation-sites/scss'];
       }
     }
 
@@ -31,9 +35,9 @@ module.exports = {
       throw new Error('Using "foundation-sass" in your Brocfile is deprecated.  Please use "ember-cli-foundation-sass" instead.');
     }
 
-    var foundationJSPath = path.join(app.bowerDirectory, 'foundation', 'js', 'foundation');
-    var modernizrPath    = path.join(app.bowerDirectory, 'modernizr');
-    var fastclickPath    = path.join(app.bowerDirectory, 'fastclick', 'lib');
+    let foundationJSPath = path.join(app.bowerDirectory, 'foundation-sites', 'dist', 'js');
+    let modernizrPath    = path.join(app.bowerDirectory, 'modernizr');
+    let fastclickPath    = path.join(app.bowerDirectory, 'fastclick', 'lib');
 
     if (options.modernizr) {
       app.import(path.join(modernizrPath, 'modernizr.js'));
@@ -47,7 +51,7 @@ module.exports = {
     if (options.foundationJs) {
       if (typeof options.foundationJs == 'string' || options.foundationJs instanceof String) {
         if (options.foundationJs === 'all') {
-          app.import(path.join(app.bowerDirectory, 'foundation', 'js', 'foundation.js'));
+          app.import(path.join(app.bowerDirectory, 'foundation-sites', 'dist', 'js', 'foundation.js'));
         }
       } else {
         app.import(path.join(foundationJSPath, 'foundation.js'));

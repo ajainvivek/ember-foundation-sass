@@ -35,7 +35,7 @@ var app = new EmberApp({
   },
   'sassOptions': { //include foundation scss
     'includePaths': [
-      'bower_components/foundation/scss'
+      'bower_components/foundation-sites/scss'
     ]
   }
 });
@@ -47,7 +47,7 @@ var app = new EmberApp({
   },
   'sassOptions': { //include foundation scss
     'includePaths': [
-      'bower_components/foundation/scss'
+      'bower_components/foundation-sites/scss'
     ]
   }
 });
@@ -59,7 +59,7 @@ var app = new EmberApp({
   },
   'sassOptions': { //include foundation scss
     'includePaths': [
-      'bower_components/foundation/scss'
+      'bower_components/foundation-sites/scss'
     ]
   }
 });
